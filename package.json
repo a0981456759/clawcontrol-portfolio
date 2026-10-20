@@ -1,0 +1,12 @@
+{
+  "name": "clawcontrol-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline, synthetic-data-only hackathon case-study demo",
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 8080"
+  },
+  "engines": {"node": ">=20"},
+  "type": "module"
+}
