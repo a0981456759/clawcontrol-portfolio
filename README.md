@@ -32,9 +32,11 @@ Emergency-department specialist referrals can involve fragmented handoffs, findi
 
 All changes are local to the browser session; refreshing the page resets the demonstration.
 
-### Demo UI
+### Actual mock dashboard screenshot
 
-The repository intentionally avoids third-party screenshots and patient media. To capture an authentic screenshot, run the local demo above and save a screenshot of **your own synthetic-data UI**. See [Screenshot guide](docs/SCREENSHOTS.md). Do not substitute a conceptual design mockup for an actual running screenshot.
+![ClawControl synthetic-data-only dashboard, captured by headless Chromium from the repository's actual static demo](docs/screenshots/dashboard.png)
+
+*Captured by GitHub Actions from the actual browser-rendered application using three fictional patient fixtures. Not a screenshot of the private original Hackathon system. See the [capture guide](docs/SCREENSHOTS.md).*
 
 ## Architecture
 
