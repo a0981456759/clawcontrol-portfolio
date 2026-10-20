@@ -1,0 +1,25 @@
+name: Static portfolio validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: JS syntax
+        run: |
+          node --check src/app.js
+          node --check src/mock-data.js
+          node --check tests/mock-data.test.js
+      - name: Unit tests
+        run: node --test
+      - name: Check for external networking APIs in demo JS
+        run: |
+          if grep -nE '\b(fetch|XMLHttpRequest|WebSocket|EventSource)\s*\(' src/*.js; then
+            echo "Possible outbound API access in offline demo" >&2
+            exit 1
+          fi
